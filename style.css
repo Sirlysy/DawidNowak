@@ -1,0 +1,89 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+header a {
+  color: #a6e1a6;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  margin: 10px 0;
+}
+
+#education {
+  color: green;
+}
+
+.cv-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex: 1;
+}
+
+.column {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+}
+
+ul.section {
+  background-color: #e8e8e8;
+  padding: 10px 15px;
+  border-radius: 5px;
+  list-style-type: square;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .cv-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    width: 90%;
+    text-align: center;
+  }
+
+  ul.section {
+    text-align: left;
+  }
+}
