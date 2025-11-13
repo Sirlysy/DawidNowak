@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors Game</title>
+
+  <!-- This style is used to keep the layout simple and clear -->
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { padding: 12px 20px; margin-right: 10px; font-size: 16px; }
+    #output { margin-top: 20px; font-size: 20px; font-weight: bold; }
+  </style>
+</head>
+
+<body>
+
+  <!-- This header is used to show game title -->
+  <h1>Rock Paper Scissors</h1>
+
+  <!-- These buttons are used for user input -->
+  <button onclick="play('rock')">Rock</button>
+  <button onclick="play('paper')">Paper</button>
+  <button onclick="play('scissors')">Scissors</button>
+
+  <!-- This area is used to display the result -->
+  <div id="output"></div>
+
+
+  <script>
+    // This function is used to run the game
+    function play(userChoice) {
+
+      // This code is used to create computer choice
+      const choices = ["rock", "paper", "scissors"];
+      const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+      let result = "";
+
+      // This code checks for a draw
+      if (userChoice === computerChoice) {
+        result = "Draw! Both chose " + userChoice;
+      }
+
+      // This code checks if the user wins
+      if (userChoice === "rock" && computerChoice === "scissors") {
+        result = "You win! Rock crushes Scissors.";
+      }
+      if (userChoice === "paper" && computerChoice === "rock") {
+        result = "You win! Paper covers Rock.";
+      }
+      if (userChoice === "scissors" && computerChoice === "paper") {
+        result = "You win! Scissors cuts Paper.";
+      }
+
+      // This code checks if the computer wins
+      if (computerChoice === "rock" && userChoice === "scissors") {
+        result = "Computer wins! Rock crushes Scissors.";
+      }
+      if (computerChoice === "paper" && userChoice === "rock") {
+        result = "Computer wins! Paper covers Rock.";
+      }
+      if (computerChoice === "scissors" && userChoice === "paper") {
+        result = "Computer wins! Scissors cuts Paper.";
+      }
+
+      // This code displays final result
+      document.getElementById("output").textContent =
+        "You chose: " + userChoice +
+        " | Computer chose: " + computerChoice +
+        " ? " + result;
+    }
+  </script>
+
+</body>
+</html>
